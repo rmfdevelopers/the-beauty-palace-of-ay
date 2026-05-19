@@ -1,27 +1,31 @@
-import { Cormorant_Garamond, Outfit } from 'next/font/google';
+import { Playfair_Display, Outfit } from 'next/font/google';
 import './globals.css';
 
-const heading = Cormorant_Garamond({ 
+const heading = Playfair_Display({ 
   subsets: ['latin'], 
   variable: '--font-heading',
-  weight: ['300', '400', '500', '600', '700'] 
+  weight: ['400', '700', '900']
 });
 
 const body = Outfit({ 
   subsets: ['latin'], 
   variable: '--font-body',
-  weight: ['300', '400', '500', '600', '700', '800'] 
+  weight: ['300', '400', '500', '600', '700']
 });
 
 export const metadata = {
   title: 'The Beauty Palace of AY | Luxury Salon Lagos',
-  description: 'Redefining Elegance, One Braid at a Time. Premier luxury hair and nail artistry in Lagos, Nigeria.',
+  description: "Lagos' premier destination for luxury braids, wig installations, and bespoke nail artistry.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${heading.variable} ${body.variable} font-sans`}>
+      <body className={`${heading.variable} ${body.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
